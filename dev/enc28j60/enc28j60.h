@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012-2013, Thingsquare, http://www.thingsquare.com/.
+ * Copyright (c) 2014, CETIC.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,21 +31,10 @@
 
 #ifndef ENC28J60_H
 #define ENC28J60_H
+#include <inttypes.h>
 
 void enc28j60_init(uint8_t *mac_addr);
-
 int enc28j60_send(uint8_t *data, uint16_t datalen);
-
 int enc28j60_read(uint8_t *buffer, uint16_t bufsize);
 
-/* ENC28J60 architecture-specific SPI functions that are called by the
-   enc28j60 driver and must be implemented by the platform code */
-
-void enc28j60_arch_spi_init(void);
-uint8_t enc28j60_arch_spi_write(uint8_t data);
-uint8_t enc28j60_arch_spi_read(void);
-void enc28j60_arch_spi_select(void);
-void enc28j60_arch_spi_deselect(void);
-
-
-#endif /* ENC28J60_H */
+#endif
