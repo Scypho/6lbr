@@ -11,13 +11,13 @@ CETIC_6LBR_LEARN_RPL_MAC=1
 
 CONTIKI_WITH_IPV6 = 1
 
-6LBR?=.
+CONTIKI = contiki 
 
-CONTIKI = $(6LBR)/../..
+APPDIRS = apps 
+#$(6LBR)/../6lbr-demo/apps
 
-APPDIRS = $(6LBR)/apps $(6LBR)/../6lbr-demo/apps
-
-PROJECTDIRS += $(6LBR) $(6LBR)/6lbr $(6LBR)/../6lbr-demo/apps/udp-client $(6LBR)/../6lbr-demo/apps/coap/rest-types
+PROJECTDIRS += 6lbr 
+#$(6LBR)/../6lbr-demo/apps/udp-client $(6LBR)/../6lbr-demo/apps/coap/rest-types
 
 CFLAGS += -DPROJECT_CONF_H=\"project-conf.h\"
 
@@ -29,7 +29,7 @@ ifeq ($(6LBR_PLUGIN),)
 $(CONTIKI_PROJECT):
 endif
 
--include $(6LBR)/platform/$(TARGET)/Makefile.$(TARGET)
+-include platform/$(TARGET)/Makefile.$(TARGET)
 ifneq ("$(wildcard platform/$(TARGET)/6lbr-conf-$(TARGET).h)","")
 CFLAGS+=-DCETIC_6LBR_PLATFORM_CONF=\"6lbr-conf-$(TARGET).h\"
 endif
