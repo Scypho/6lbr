@@ -11,7 +11,8 @@ CETIC_6LBR_LEARN_RPL_MAC=1
 
 CONTIKI_WITH_IPV6 = 1
 
-CONTIKI = contiki 
+CONTIKI = contiki_mainline
+RELSTR = beta1
 
 APPDIRS = apps 
 #$(6LBR)/../6lbr-demo/apps
